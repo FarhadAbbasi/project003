@@ -30,10 +30,10 @@ jobs:
         with:            
             node-version: 14
             
-      - name: install yarn
-        run:  npm install --global yarn
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install # will run `yarn install` command
         
-           
       - name: Build react app
         run: yarn build
         
