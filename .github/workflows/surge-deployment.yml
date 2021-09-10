@@ -34,6 +34,9 @@ jobs:
         with:
           cmd: install # will run `yarn install` command
         
+      - name: update browser list    
+        run: npx browserslist@latest --update-db
+        
       - name: Build react app
         run: yarn build
         
