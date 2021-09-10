@@ -29,13 +29,16 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:            
             node-version: 14
-            
+
+      - name: granting access for installation           
+        run: npm config set unsafe-perm true
+        
+      - name: granting access with force  
+        run: npm install --force  
+        
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
-        
-      - name: update browser list    
-        run: npx browserslist@latest --update-db
         
       - name: Build react app
         run: yarn build
